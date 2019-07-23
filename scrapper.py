@@ -3,16 +3,25 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome("C:\\usr\\chromedriver")
+           
+           
+cities = []
+total_votes = []
+winner_votes = []
+winner_name = []
+winning_party = []
+temp1 = [] 
+temp2 = []
 
 def max_votes(n):
     for j in range(1,len(n),2):
            temp2.append(n[j].text)
+      
+    for k in range(0, len(temp2)): 
+        temp2[k] = int(temp2[k]) 
+    temp2.sort()
+    return temp2[-1]
 
-cities = []
-total_votes = []
-winner_votes = []
-temp1 = [] 
-temp2 = []
 
 
 for i in range(1,81):
@@ -29,9 +38,17 @@ for i in range(1,81):
     total_votes.append(total[3].text)
 
     votes = soup.findAll('td',attrs={'style':'width:13%;'})
-    max_votes(votes)
+    winner_votes.append(max_votes(votes))
     
     
+        
+    
+    
+    
+    
+    
+
+
     
       
         
