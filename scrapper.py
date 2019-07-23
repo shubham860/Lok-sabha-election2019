@@ -17,7 +17,7 @@ def max_votes(n):
     for j in range(1,len(n),2):
            temp2.append(n[j].text)
       
-    for k in range(0, len(temp2)): 
+    for k in range(0,len(temp2)): 
         temp2[k] = int(temp2[k]) 
     temp2.sort()
     return temp2[-1]
