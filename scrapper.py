@@ -40,6 +40,11 @@ for i in range(1,81):
     votes = soup.findAll('td',attrs={'style':'width:13%;'})
     winner_votes.append(max_votes(votes))
     
+    party_name = soup.find_previous_siblings('td',attrs={'style':'width:13%;'})
+    winner_votes.append(max_votes(votes))
+    
+    
+    
     
         
     
