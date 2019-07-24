@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome("C:\\usr\\chromedriver")
-           
-           
+                 
 cities = []
 total_votes = []
 winner_votes = []
@@ -21,7 +20,6 @@ def max_votes(n):
         temp2[k] = int(temp2[k]) 
     temp2.sort()
     return temp2[-1]
-
 
 
 for i in range(1,81):
