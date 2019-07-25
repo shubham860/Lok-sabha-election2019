@@ -11,15 +11,17 @@ winner_name = []
 winning_party = []
 temp1 = [] 
 temp2 = []
+temp3 = []
 
-def max_votes(n):
-    for j in range(1,len(n),2):
-           temp2.append(n[j].text)
-           
-    for k in range(0,len(temp2)): 
-        temp2[k] = int(temp2[k]) 
-    x = max(temp2)
-    return x
+
+#def max_votes(n):
+#    for j in range(1,len(n),2):
+#           temp2.append(n[j].text)           
+#           
+#    for k in range(0,len(temp2)): 
+#        temp2[k] = int(temp2[k]) 
+#    x = max(temp2)
+#    return x
 
 
 for i in range(1,81):
@@ -28,16 +30,22 @@ for i in range(1,81):
     content = driver.page_source
     soup = BeautifulSoup(content) 
     
-    results = soup.findAll('th',attrs={'colspan':'9'})
-    city = (results[0].text).replace('\n','') 
-    cities.append(city.strip())
+#    results = soup.findAll('th',attrs={'colspan':'9'})
+#    city = (results[0].text).replace('\n','') 
+#    cities.append(city.strip())
+#    
+#    total = soup.findAll('td',attrs={'style':'width:12%;'})
+#    total_votes.append(total[3].text)
+#
+#    votes = soup.findAll('td',attrs={'style':'width:13%;'})
+#    winner_votes.append(max_votes(votes))
     
-    total = soup.findAll('td',attrs={'style':'width:12%;'})
-    total_votes.append(total[3].text)
-
-    votes = soup.findAll('td',attrs={'style':'width:13%;'})
-    winner_votes.add(max_votes(votes))
-    
+    votes = soup.findAll('tr',attrs={'style':'font-size:12px;'})
+    for o in range(0,len(votes)):
+        name = votes[o]
+        temp3.append(name.contents[5].text)
+        x = max(temp3)
+        winner_votes.append(max_votes)
 
 
 
