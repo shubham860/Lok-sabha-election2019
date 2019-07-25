@@ -43,9 +43,8 @@ for i in range(1,81):
     votes = soup.findAll('tr',attrs={'style':'font-size:12px;'})
     for o in range(0,len(votes)):
         name = votes[o]
-        temp3.append(name.contents[5].text)
-        x = max(temp3)
-        winner_votes.append(max_votes)
+        name.contents[5].text
+        
 
 
 
