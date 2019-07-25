@@ -18,8 +18,8 @@ def max_votes(n):
            
     for k in range(0,len(temp2)): 
         temp2[k] = int(temp2[k]) 
-    temp2.sort()
-    return temp2[-1]
+    x = max(temp2)
+    return x
 
 
 for i in range(1,81):
@@ -36,15 +36,10 @@ for i in range(1,81):
     total_votes.append(total[3].text)
 
     votes = soup.findAll('td',attrs={'style':'width:13%;'})
-    winner_votes.append(max_votes(votes))
+    winner_votes.add(max_votes(votes))
     
-    
-        
-    
-    
-    
-    
-    
+
+
 
 
     
