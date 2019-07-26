@@ -40,10 +40,12 @@ for i in range(1,81):
 #    votes = soup.findAll('td',attrs={'style':'width:13%;'})
 #    winner_votes.append(max_votes(votes))
     
-    votes = soup.findAll('tr',attrs={'style':'font-size:12px;'})
-    for o in range(0,len(votes)):
-        name = votes[o]
-        name.contents[5].text
+    table = soup.findAll('tr',attrs={'style':'font-size:12px;'})
+    for o in range(0,len(table)):
+        name = table[o]
+        temp3.append(name.contents[5].text)
+        
+        
         
 
 
