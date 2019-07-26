@@ -12,15 +12,14 @@ winning_party = []
 winner_vote_per = []
 EVM_voting = []
 postal_voting = []
-voting_per = []
+
 temp1 = [] 
 temp2 = []
 temp3 = []
 temp4 = []
 temp5 = []
 temp6 = []
-total_ = []
-avg = []
+
 #def max_votes(n):
 #    for j in range(1,len(n),2):
 #           temp2.append(n[j].text)           
@@ -83,28 +82,28 @@ for i in range(1,81):
         if(temp3.index(max(temp3)) == p):
             winner_vote_per.append(temp6[temp3.index(max(temp3))])
     
-for s in range(0,len(EVM_voting)): 
-            EVM_voting[s] = int(EVM_voting[s])
-            
-for t in range(0,len(postal_voting)): 
-        postal_voting[t] = int(postal_voting[t])
-        
-for u in range(0,len(total_votes)): 
-        total_votes[u] = int(total_votes[u]) 
-        
-for w in range(0,len(total_)): 
-        total_[w] = int(total_[w])  
-        
-for s in range(0,len(avg)): 
-        avg[s] = float(avg[s])            
-       
-for b in range(0,len(postal_voting)):
-    total_ = postal_voting[b] + EVM_voting[b]
-    avg = (total_/total_votes[b])*100
-voting_per.append(avg)        
-    
+#for s in range(0,len(EVM_voting)): 
+#            EVM_voting[s] = int(EVM_voting[s])
+#            
+#for t in range(0,len(postal_voting)): 
+#        postal_voting[t] = int(postal_voting[t])
+#        
+#for u in range(0,len(total_votes)): 
+#        total_votes[u] = int(total_votes[u]) 
+#        
+##for w in range(0,len(total_)): 
+##        total_[w] = int(total_[w])  
+##        
+##for s in range(0,len(avg)): 
+##        avg[s] = float(avg[s])            
+##       
+###for b in range(0,len(postal_voting)):
+###    total_ = postal_voting[b] + EVM_voting[b]
+###    avg = (total_/total_votes[b])*100
+###voting_per.append(avg)        
+###    
 
-dataset = pd.DataFrame({'District': cities, 'Total votes': total_votes,'EVM votes':EVM_voting, 'Postal votes':postal_voting,'Total voting %': voting_per, 'Winner': winner_name ,'votes of winner': winner_votes ,'Winner votes %':winner_vote_per ,'winning party': winning_party })            
+dataset = pd.DataFrame({'District': cities, 'Total votes': total_votes, 'EVM votes': EVM_voting, 'Postal votes': postal_voting,'Winner': winner_name ,'votes of winner': winner_votes ,'Winner votes %':winner_vote_per ,'winning party': winning_party })            
 dataset.to_csv('UP_2019.csv' 'Data.csv',index=False,encoding='utf-8')       
         
 
