@@ -42,9 +42,20 @@ for i in range(1,81):
     
     table = soup.findAll('tr',attrs={'style':'font-size:12px;'})
     for o in range(0,len(table)):
-        name = table[o]
-        temp3.append(name.contents[5].text)
+        no = table[o]
+        temp3.append(no.contents[5].text)
         
+        for k in range(0,len(temp3)): 
+            temp3[k] = int(temp3[k])        
+        x = max(temp3)
+    winner_votes.append(x)
+        
+    
+#    for o in range(0,len(table)):
+#        name = table[o]
+#        temp3.append(name.contents[5].text)
+#        x = max(temp3)
+#        winner_votes.append(x)
         
         
 
