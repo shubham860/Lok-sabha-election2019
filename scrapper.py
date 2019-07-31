@@ -100,8 +100,7 @@ for i in range(1,81):
 ###for b in range(0,len(postal_voting)):
 ###    total_ = postal_voting[b] + EVM_voting[b]
 ###    avg = (total_/total_votes[b])*100
-###voting_per.append(avg)        
-###    
+###voting_per.append(avg)           
 
 dataset = pd.DataFrame({'District': cities, 'Total votes': total_votes, 'EVM votes': EVM_voting, 'Postal votes': postal_voting,'Winner': winner_name ,'votes of winner': winner_votes ,'Winner votes %':winner_vote_per ,'winning party': winning_party })            
 dataset.to_csv('UP_2019.csv' 'Data.csv',index=False,encoding='utf-8')       
